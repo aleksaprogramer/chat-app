@@ -1,5 +1,10 @@
 <?php
 
+if (isset($_SESSION['user_id'])) {
+    header("Location: $env->base_url" . "/?router=homepage");
+    exit();
+}
+
 // CSRF token
 if (!isset($_SESSION['csrf-token'])) {
     $_SESSION['csrf-token'] = bin2hex(random_bytes(32));
