@@ -13,6 +13,10 @@ if (isset($_GET['router'])) {
             require_once '././modules/login.php';
             break;
 
+        case 'homepage':
+            require_once '././modules/homepage.php';
+            break;
+
         default:
             exit("404. Page not found");
     }
