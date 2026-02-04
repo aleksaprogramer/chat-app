@@ -40,8 +40,8 @@ if (!$user_two) {
     <form>
         <input type="hidden" id="username" value="<?php echo $user_one['username'] ?>">
         <input type="text" placeholder="Message" id="message">
-        <button type="submit">Send</button>
+        <button type="submit" id="send-btn">Send</button>
     </form>
 
-    <div class="messages-output"></div>
+    <div id="messages-output"></div>
 </div>
