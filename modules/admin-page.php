@@ -5,10 +5,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Get all users
-$logged_user_id = $_SESSION['user_id'];
+// Restriction
+restrict($env, $db);
 
-$sql = "SELECT id, username, phone_number FROM users WHERE NOT id = $logged_user_id";
+// Get all users
+$sql = "SELECT id, username, phone_number, created_at FROM users WHERE is_admin = 0";
 $run = $db->query($sql);
 $results = $run->fetch_all(MYSQLI_ASSOC);
 
@@ -23,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 
-<div class="homepage">
-    <h2>Homepage</h2>
+<div class="admin-page">
+    <h2>Admin Page</h2>
 
     <form method="POST">
         <button type="submit">Logout</button>
@@ -34,7 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="users-container">
 
             <?php foreach ($users as $user): ?>
-                <a href="<?php echo $env->base_url . "/?router=chat&id=" . $user['id'] ?>"><?php echo $user['username'] ?> <?php echo $user['phone_number'] ?></a><br><br>
+                <div class="user">
+                    <h4>Username: <?php echo $user['username'] ?></h4>
+                    <h4>Phone number: <?php echo $user['phone_number'] ?></h4>
+                    <h4>Created at: <?php echo $user['created_at'] ?></h4>
+                </div>
             <?php endforeach; ?>
 
         </div>

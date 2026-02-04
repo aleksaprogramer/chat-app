@@ -1,6 +1,6 @@
 <?php
 
-function restrict ($database) {
+function restrict ($environment, $database) {
     $user_id = $_SESSION['user_id'];
     $sql = "SELECT is_admin FROM users WHERE id = $user_id";
     $run = $database->query($sql);
@@ -8,7 +8,8 @@ function restrict ($database) {
 
     $user = $results;
 
-    if ($user['is_admin'] === '1') {
-        exit("You are admin");
+    if ($user['is_admin'] === '0') {
+        header("Location: $environment->base_url" . "/?router=homepage");
+        exit();
     }
 }

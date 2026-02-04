@@ -17,6 +17,14 @@ if (isset($_GET['router'])) {
             require_once '././modules/homepage.php';
             break;
 
+        case 'chat':
+            require_once '././modules/chat.php';
+            break;
+
+        case 'admin-page':
+            require_once '././modules/admin-page.php';
+            break;
+
         default:
             exit("404. Page not found");
     }
