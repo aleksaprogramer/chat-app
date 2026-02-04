@@ -1,5 +1,10 @@
 <?php
 
+if (isset($_SESSION['user_id'])) {
+    header("Location: $env->base_url" . "/?router=homepage");
+    exit();
+}
+
 // CSRF token
 if (!isset($_SESSION['csrf-token'])) {
     $_SESSION['csrf-token'] = bin2hex(random_bytes(32));
@@ -23,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validating data
     if (!isset($_SESSION['csrf-token']) || !hash_equals($_SESSION['csrf-token'], $csrf_token)) {
-        header("Location: http://localhost/projects/chat-app/?router=register");
+        header("Location: $env->base_url" . "/?router=register");
         exit();
 
     } else if ($username === '') {
@@ -83,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['user_id'] = $user_id;
         header("Location: $env->base_url" . "/?router=homepage");
         unset($_SESSION['csrf-token']);
+        exit();
     }
 }
 
