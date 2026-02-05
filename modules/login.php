@@ -6,8 +6,9 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // CSRF token
-if (!isset($_SESSION['csrf-token'])) {
+if (!isset($_SESSION['csrf-token']) || !isset($_SESSION['csrf-token-expire'])) {
     $_SESSION['csrf-token'] = bin2hex(random_bytes(32));
+    $_SESSION['csrf-token-expire'] = time() + 900; // 15 minutes
 }
 
 // Handling errors
@@ -27,6 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validating data
     if (!isset($_SESSION['csrf-token']) || !isset($_POST['csrf-token']) || !hash_equals($_SESSION['csrf-token'], $csrf_token)) {
         header("Location: $env->base_url" . "/?router=login");
+        exit();
+
+    } else if (time() >= (int)$_SESSION['csrf-token-expire']) {
+        header("Location: $env->base_url" . "/?router=login");
+        unset($_SESSION['csrf-token']);
+        unset($_SESSION['csrf-token-expire']);
         exit();
 
     } else if ($phone_number === '') {
@@ -65,7 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $logged_user = $current_user;
             $_SESSION['user_id'] = $logged_user['id'];
+
             unset($_SESSION['csrf-token']);
+            unset($_SESSION['csrf-token-expire']);
+
             header("Location: $env->base_url" . "/?router=homepage");
             exit();
         }
