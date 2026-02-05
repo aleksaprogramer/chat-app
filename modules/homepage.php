@@ -24,19 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="homepage">
-    <h2>Homepage</h2>
+    <div class="container">
+        <h2>Homepage</h2>
 
-    <form method="POST">
-        <button type="submit">Logout</button>
-    </form>
+        <form method="POST">
+            <button type="submit">Logout</button>
+        </form>
 
-    <?php if (count($users) > 0): ?>
-        <div class="users-container">
+        <?php if (count($users) > 0): ?>
+            <div class="users-container">
 
-            <?php foreach ($users as $user): ?>
-                <a href="<?php echo $env->base_url . "/?router=chat&id=" . $user['id'] ?>"><?php echo $user['username'] ?> <?php echo $user['phone_number'] ?></a><br><br>
-            <?php endforeach; ?>
+                <?php foreach ($users as $user): ?>
+                    <a href="<?php echo $env->base_url . "/?router=chat&id=" . $user['id'] ?>"><span>User:</span> <?php echo $user['username'] ?></a>
+                <?php endforeach; ?>
 
-        </div>
-    <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
 </div>

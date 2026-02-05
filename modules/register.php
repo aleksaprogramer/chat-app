@@ -97,30 +97,32 @@ mysqli_close($db);
 ?>
 
 <div class="register">
-    <h2>Register</h2>
+    <div class="container">
+        <h2>Register</h2>
 
-    <form method="POST">
-        <input type="hidden" name="csrf-token" value="<?php echo $_SESSION['csrf-token']; ?>">
-        <input type="text" placeholder="Username" name="username">
-        <?php if ($username_error): ?>
-            <p><?php echo $username_error; ?></p>
-        <?php endif; ?>
+        <form method="POST">
+            <input type="hidden" name="csrf-token" value="<?php echo $_SESSION['csrf-token']; ?>">
+            <input type="text" placeholder="Username" name="username">
+            <?php if ($username_error): ?>
+                <p><?php echo $username_error; ?></p>
+            <?php endif; ?>
 
-        <input type="text" placeholder="Phone number" name="phone_number" maxlength="10">
-        <?php if ($phone_number_error): ?>
-            <p><?php echo $phone_number_error; ?></p>
-        <?php endif; ?>
+            <input type="text" placeholder="Phone number" name="phone_number" maxlength="10">
+            <?php if ($phone_number_error): ?>
+                <p><?php echo $phone_number_error; ?></p>
+            <?php endif; ?>
 
-        <input type="password" placeholder="Password" name="password">
-        <?php if ($password_error): ?>
-            <p><?php echo $password_error; ?></p>
-        <?php endif; ?>
+            <input type="password" placeholder="Password" name="password">
+            <?php if ($password_error): ?>
+                <p><?php echo $password_error; ?></p>
+            <?php endif; ?>
 
-        <input type="password" placeholder="Confirm password" name="password-confirm">
-        <?php if ($password_confirm_error): ?>
-            <p><?php echo $password_confirm_error; ?></p>
-        <?php endif; ?>
+            <input type="password" placeholder="Confirm password" name="password-confirm">
+            <?php if ($password_confirm_error): ?>
+                <p><?php echo $password_confirm_error; ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Register</button>
-    </form>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </div>

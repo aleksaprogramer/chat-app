@@ -25,23 +25,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="admin-page">
-    <h2>Admin Page</h2>
+    <div class="container">
+        <h2>Admin Page</h2>
 
-    <form method="POST">
-        <button type="submit">Logout</button>
-    </form>
+        <a href="<?php echo $env->base_url . "?router=homepage" ?>" class="back-to-homepage-link">Back to homepage</a>
 
-    <?php if (count($users) > 0): ?>
-        <div class="users-container">
+        <form method="POST">
+            <button type="submit">Logout</button>
+        </form>
 
-            <?php foreach ($users as $user): ?>
-                <div class="user">
-                    <h4>Username: <?php echo $user['username'] ?></h4>
-                    <h4>Phone number: <?php echo $user['phone_number'] ?></h4>
-                    <h4>Created at: <?php echo $user['created_at'] ?></h4>
-                </div>
-            <?php endforeach; ?>
+        <?php if (count($users) > 0): ?>
+            <div class="users-container">
 
-        </div>
-    <?php endif; ?>
+                <?php foreach ($users as $user): ?>
+                    <div class="user">
+                        <h4>Username: <?php echo $user['username'] ?></h4>
+                        <h4>Phone number: <?php echo $user['phone_number'] ?></h4>
+                        <h4>Created at: <?php echo $user['created_at'] ?></h4>
+                    </div>
+                <?php endforeach; ?>
+
+            </div>
+        <?php endif; ?>
+    </div>
 </div>

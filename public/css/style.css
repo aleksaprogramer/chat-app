@@ -56,3 +56,181 @@ body {
     background-color: #127a27;
     color: #f9f9f9;
 }
+
+/* Homepage ============================================================================= */
+.homepage {
+    padding-top: 30px;
+}
+
+.homepage h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.homepage form button {
+    width: 100px;
+    padding: 8px;
+    outline: none;
+    background-color: #a70101;
+    border-radius: 10px;
+    border: 1px solid #a70101;
+    color: #f9f9f9;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.homepage form button:hover {
+    color: #a70101;
+    background-color: #127a27;
+}
+
+.homepage .users-container a {
+    text-decoration: none;
+    color: #f9f9f9;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #0d5c1d;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.homepage .users-container a:hover {
+    background-color: #489d59;
+}
+
+/* Register ============================================================================= */
+.register {
+    padding-top: 30px;
+}
+
+.register h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.register form input {
+    display: block;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: #07320f;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    padding: 8px;
+    width: 200px;
+    color: #f9f9f9;
+}
+
+.register form button {
+    width: 200px;
+    padding: 8px;
+    outline: none;
+    background-color: #f9f9f9;
+    border-radius: 100px;
+    border: 1px solid #f9f9f9;
+    color: #127a27;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.register form button:hover {
+    background-color: #127a27;
+    color: #f9f9f9;
+}
+
+/* Admin page ============================================================================= */
+.admin-page {
+    padding-top: 30px;
+}
+
+.admin-page h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.admin-page form button {
+    width: 100px;
+    padding: 8px;
+    outline: none;
+    background-color: #a70101;
+    border-radius: 10px;
+    border: 1px solid #a70101;
+    color: #f9f9f9;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-page form button:hover {
+    color: #a70101;
+    background-color: #127a27;
+}
+
+.admin-page .users-container .user {
+    padding: 20px;
+}
+
+.admin-page .back-to-homepage-link {
+    color: #f9f9f9;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.admin-page .back-to-homepage-link:hover {
+    text-decoration: none;
+}
+
+/* Chat ============================================================================= */
+.chat {
+    padding-top: 30px;
+}
+
+.chat h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.chat .back-to-homepage-link {
+    color: #f9f9f9;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.chat .back-to-homepage-link:hover {
+    text-decoration: none;
+}
+
+.chat form input {
+    display: block;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: #07320f;
+    border: 1px solid #f9f9f9;
+    border-radius: 5px;
+    padding: 8px;
+    width: 200px;
+    color: #f9f9f9;
+}
+
+.chat form button {
+    width: 200px;
+    padding: 8px;
+    outline: none;
+    background-color: #f9f9f9;
+    border-radius: 100px;
+    border: 1px solid #f9f9f9;
+    color: #127a27;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat form button:hover {
+    background-color: #127a27;
+    color: #f9f9f9;
+}

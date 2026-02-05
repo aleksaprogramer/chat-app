@@ -35,15 +35,17 @@ if (!$user_two) {
 ?>
 
 <div class="chat">
-    <h2>Chat</h2>
+    <div class="container">
+        <h2>Chat with <?php echo $user_two['username'] ?></h2>
 
-    <a href="<?php echo $env->base_url . "?router=homepage" ?>">Back to homepage</a>
+        <a href="<?php echo $env->base_url . "?router=homepage" ?>" class="back-to-homepage-link">Back to homepage</a>
 
-    <form>
-        <input type="hidden" id="username" value="<?php echo $user_one['username'] ?>">
-        <input type="text" placeholder="Message" id="message">
-        <button type="submit" id="send-btn">Send</button>
-    </form>
+        <form>
+            <input type="hidden" id="username" value="<?php echo $user_one['username'] ?>">
+            <input type="text" placeholder="Message" id="message">
+            <button type="submit" id="send-btn">Send</button>
+        </form>
 
-    <div id="messages-output"></div>
+        <div id="messages-output"></div>
+    </div>
 </div>
