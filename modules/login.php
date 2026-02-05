@@ -75,20 +75,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="login">
-    <h2>Login</h2>
+    <div class="container">
+        <h2>Login</h2>
 
-    <form method="POST">
-        <input type="hidden" name="csrf-token" value="<?php echo $_SESSION['csrf-token'] ?>">
-        <input type="text" placeholder="Phone number" name="phone_number" maxlength="10">
-        <?php if ($phone_number_error): ?>
-            <p><?php echo $phone_number_error; ?></p>
-        <?php endif; ?>
+        <form method="POST">
+            <input type="hidden" name="csrf-token" value="<?php echo $_SESSION['csrf-token'] ?>">
+            <input type="text" placeholder="Phone number" name="phone_number" maxlength="10">
+            <?php if ($phone_number_error): ?>
+                <p><?php echo $phone_number_error; ?></p>
+            <?php endif; ?>
 
-        <input type="password" placeholder="Password" name="password">
-        <?php if ($password_error): ?>
-            <p><?php echo $password_error; ?></p>
-        <?php endif; ?>
+            <input type="password" placeholder="Password" name="password">
+            <?php if ($password_error): ?>
+                <p><?php echo $password_error; ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </div>

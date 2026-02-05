@@ -10,6 +10,4 @@ $db = mysqli_connect($servername, $username, $password, $dbname);
 if (!$db) {
     exit("Connection with database failed.");
 
-} else {
-    echo "Connected to database...";
 }

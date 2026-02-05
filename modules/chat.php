@@ -37,6 +37,8 @@ if (!$user_two) {
 <div class="chat">
     <h2>Chat</h2>
 
+    <a href="<?php echo $env->base_url . "?router=homepage" ?>">Back to homepage</a>
+
     <form>
         <input type="hidden" id="username" value="<?php echo $user_one['username'] ?>">
         <input type="text" placeholder="Message" id="message">
