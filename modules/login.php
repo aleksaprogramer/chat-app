@@ -65,8 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $logged_user = $current_user;
             $_SESSION['user_id'] = $logged_user['id'];
-            header("Location: $env->base_url" . "/?router=homepage");
             unset($_SESSION['csrf-token']);
+            header("Location: $env->base_url" . "/?router=homepage");
             exit();
         }
     }

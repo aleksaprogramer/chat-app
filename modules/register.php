@@ -86,8 +86,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $user_id = mysqli_insert_id($db);
 
         $_SESSION['user_id'] = $user_id;
-        header("Location: $env->base_url" . "/?router=homepage");
         unset($_SESSION['csrf-token']);
+        header("Location: $env->base_url" . "/?router=homepage");
         exit();
     }
 }
